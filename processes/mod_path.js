@@ -25,7 +25,8 @@ define(['require',
    'text!templates/mod_path_image_22D_controls.html',
    'text!templates/mod_path_image_25D_controls.html',
    'text!templates/mod_path_image_3D_controls.html',
-   'text!templates/mod_path_image_halftone_controls.html'
+   'text!templates/mod_path_image_halftone_controls.html',
+   'text!templates/mod_cost.html'
 ], function(require) {
 
    var globals = require('mods/mod_globals');
@@ -33,15 +34,15 @@ define(['require',
    var mod_file = require('mods/mod_file');
    var path_view = require('processes/mod_path_view');
    var imageUtils = require('processes/mod_image');
-   var handlebars = require('handlebars')
-   var mod_path_file_controls_tpl = handlebars.compile(require('text!templates/mod_path_file_controls.html'))
-   var mod_path_image_2D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_2D_controls.html'))
-   var mod_path_image_21D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_21D_controls.html'))
-   var mod_path_image_22D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_22D_controls.html'))
-   var mod_path_image_25D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_25D_controls.html'))
-   var mod_path_image_3D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_3D_controls.html'))
-   var mod_path_image_halftone_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_halftone_controls.html'))
-/*   var mod_cost_tpl = handlebars.compile(require('text!templates/mod_cost.html'))*/
+   var handlebars = require('handlebars');
+   var mod_path_file_controls_tpl = handlebars.compile(require('text!templates/mod_path_file_controls.html'));
+   var mod_path_image_2D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_2D_controls.html'));
+   var mod_path_image_21D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_21D_controls.html'));
+   var mod_path_image_22D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_22D_controls.html'));
+   var mod_path_image_25D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_25D_controls.html'));
+   var mod_path_image_3D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_3D_controls.html'));
+   var mod_path_image_halftone_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_halftone_controls.html'));
+   var mod_cost_tpl = handlebars.compile(require('text!templates/mod_cost.html'));
    findEl = globals.findEl;
 
    //

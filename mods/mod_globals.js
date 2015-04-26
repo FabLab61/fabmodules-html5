@@ -23,6 +23,7 @@ define(function() {
    exports.s = "" // view scale
    exports.mesh = {} // mesh data
    exports.vol = {} // volume data
+   exports.locale_units = "cm"
 
 
    var domCache = {};
