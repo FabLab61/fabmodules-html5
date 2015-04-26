@@ -49,6 +49,8 @@ define(['mods/mod_globals', 'mods/mod_file'], function(globals, mod_file) {
       margin: 10,
       width: window.innerWidth,
       height: window.innerHeight,
+      units : "cm"
+
    }
 
 
@@ -414,10 +416,14 @@ define(['mods/mod_globals', 'mods/mod_file'], function(globals, mod_file) {
          span.addEventListener("mouseover", function(e) {
             this.style.background = Defaults.highlight_background_color
          }, false)
+
+/*         Event when press ubload menu*/
+
          span.addEventListener("click", function(e) {
             if (menu.hasChildNodes()) {
                menu.innerHTML = ""
             }
+            
             label.innerHTML = item[0]
             exports.ui_prompt("")
             mod_file.call(item[1])

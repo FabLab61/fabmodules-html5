@@ -37,11 +37,9 @@ define(['mods/mod_ui'], function(ui) {
    //    set up inputs menu
    //
 
-      function mod_inputs() {
-         var label = document.getElementById("mod_inputs_label")
-         label.innerHTML = "input format"
-         label.onclick = function(e) {
-            ui.ui_clear()
+
+      function clear_controls () {
+         /**  Clear all elements except first one **/
             var label = document.getElementById("mod_outputs_label")
             label.style.display = "none"
             var label = document.getElementById("mod_processes_label")
@@ -52,9 +50,19 @@ define(['mods/mod_ui'], function(ui) {
             div.innerHTML = ""
             var div = document.getElementById("mod_process_controls")
             div.innerHTML = ""
-            ui.ui_prompt("input file to read?")
-            ui.ui_menu_file(input_array, "mod_inputs")
+      }
+
+
+      function mod_inputs() {
+         var label = document.getElementById("mod_inputs_label")
+         label.innerHTML = "input format"
+         label.onclick = function(e) {
+            ui.ui_clear()
+            clear_controls()
+            ui.ui_prompt("input file to read?")     // Комментарий над выпадающим меню
+            ui.ui_menu_file(input_array, "mod_inputs") *//*
             ui.ui_view_reset()
+
          }
          label.onmouseover = function(e) {
             this.style.background = ui.defaults.highlight_background_color

@@ -41,6 +41,7 @@ define(['require',
    var mod_path_image_25D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_25D_controls.html'))
    var mod_path_image_3D_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_3D_controls.html'))
    var mod_path_image_halftone_controls_tpl = handlebars.compile(require('text!templates/mod_path_image_halftone_controls.html'))
+/*   var mod_cost_tpl = handlebars.compile(require('text!templates/mod_cost.html'))*/
    findEl = globals.findEl;
 
    //
@@ -137,6 +138,8 @@ define(['require',
          var sort_sequence = parseFloat(findEl("mod_sequence").value)
          //
          // set up path Web worker
+         // http://www.w3schools.com/html/html5_webworkers.asp
+
          //
          var worker = new Worker('processes/mod_path_worker.js')
          var path = []
@@ -558,7 +561,7 @@ define(['require',
          var input_canvas = findEl("mod_input_canvas")
          var process_canvas = findEl("mod_process_canvas")
          var output_canvas = findEl("mod_output_canvas")
-         var input_ctx = input_canvas.getContext("2d")
+         var input_ctx = input_canvas.getContext("2d")      //  returns a drawing context on the canvas
          var input_img = input_ctx.getImageData(0, 0, input_canvas.width, input_canvas.height)
          var process_ctx = process_canvas.getContext("2d")
          process_ctx.drawImage(input_canvas, 0, 0)
@@ -624,6 +627,8 @@ define(['require',
                      path3[path3.length - 1][path3[path3.length - 1].length] = [path2[seg][pt][X], path2[seg][pt][Y], iz]
                   }
                }
+
+
                //
                // show path
                //
